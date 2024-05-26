@@ -1,3 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+/* Variables */
+:root {
+    --primary: #FAD030;
+    --secondary: #40FFF5;
+    --tertiary: #9733C9;
+    --text: #000;
+    --link: #322BAA;
+    --container: #322BAA;
+    --on-container: #FFF;
+    --header-background-linear-gradient: linear-gradient(90deg, #5882EC 0%, #060457 100%);
+    --ueberuns-background-linear-gradient: linear-gradient(90deg, #FFF9E1 0%, #F9ECFF 100%);
+    --helmfakten-background-linear-gradient: linear-gradient(90deg, #ECEBFE 0%, #ECFFFE 100%);
+    --ressourcen-background-linear-gradient: linear-gradient(90deg, #FFF7D7 0%, #D5D2FF 100%);
+    --h5-highlight-linear-gradient: linear-gradient(90deg, #FAD030 0%, #9733C9 100%);
+}
+
+
+/* Reset */
+*,
+*::after,
+*::before {
+    border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	-webkit-appearance: none;
+	appearance: none;
+	-moz-appearance: none;
+	border-radius: 0%;
+	-webkit-border-radius: 0;
+}
+
+/* Fonts */
+h1, h2, h3, h4, h5 {
+    font-family: "League Gothic", sans-serif;
+    letter-spacing: 1.2px;
+    color: var(--text);
+}
+body { 
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+}
+h1 { font-size: 64px; }
+h2 { font-size: 40px; }
+h3 { font-size: 36px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+small { font-size: 14px; }
+
+
 body {
     display: flex;
     align-items: center;
@@ -6,6 +67,13 @@ body {
 
 #top-nav {
     display: flex;
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
 }
 
 #logo {
@@ -13,3 +81,10 @@ body {
     height: auto;
 }
 
+#links {
+    display: flex;
+    width: 75%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
