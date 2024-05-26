@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-nav {
+    display: flex;
+}
+
+#logo {
+    width: 25%;
+    height: auto;
+}
+
