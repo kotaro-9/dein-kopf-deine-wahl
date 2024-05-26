@@ -1,2 +1,1 @@
-# dein-kopf-deine-wahl
-Dein Kopf, Deine Wahl
+# Dein Kopf, Deine Wahl
