@@ -5,15 +5,16 @@
     --primary: #FAD030;
     --secondary: #40FFF5;
     --tertiary: #9733C9;
+    --background: #F6F6F6;
     --text: #000;
     --link: #322BAA;
     --container: #322BAA;
     --on-container: #FFF;
-    --header-background-linear-gradient: linear-gradient(90deg, #5882EC 0%, #060457 100%);
-    --ueberuns-background-linear-gradient: linear-gradient(90deg, #FFF9E1 0%, #F9ECFF 100%);
-    --helmfakten-background-linear-gradient: linear-gradient(90deg, #ECEBFE 0%, #ECFFFE 100%);
-    --ressourcen-background-linear-gradient: linear-gradient(90deg, #FFF7D7 0%, #D5D2FF 100%);
-    --h5-highlight-linear-gradient: linear-gradient(90deg, #FAD030 0%, #9733C9 100%);
+    --header-background-linear-gradient: linear-gradient(180deg, #5882EC 0%, #060457 100%);
+    --ueber-uns-background-linear-gradient: linear-gradient(180deg, #FFF9E1 0%, #F9ECFF 100%);
+    --helmfakten-background-linear-gradient: linear-gradient(180deg, #ECEBFE 0%, #ECFFFE 100%);
+    --ressourcen-background-linear-gradient: linear-gradient(180deg, #FFF7D7 0%, #D5D2FF 100%);
+    --h5-highlight-linear-gradient: linear-gradient(180deg, #FAD030 0%, #9733C9 100%);
 }
 
 
@@ -25,6 +26,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 input,
@@ -45,35 +47,51 @@ button {
 h1, h2, h3, h4, h5 {
     font-family: "League Gothic", sans-serif;
     letter-spacing: 1.2px;
+    text-align: center;
+    font-weight: 200;
     color: var(--text);
 }
-body { 
+body, p { 
     font-size: 16px;
     font-family: 'Segoe UI', sans-serif;
+    text-align: center;
 }
-h1 { font-size: 64px; }
+h1 {
+    font-size: 64px;
+}
 h2 { font-size: 40px; }
 h3 { font-size: 36px; }
 h4 { font-size: 24px; }
 h5 { font-size: 20px; }
 small { font-size: 14px; }
+a, 
+a:visited { 
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
 
 
-body {
+html {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
+body {
+    margin-bottom: 5rem;
+}
+
 #top-nav {
-    display: flex;
+    width: 100%;
     position: sticky;
     top: 0;
-    flex-direction: row;
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-
+    gap: 10%;
+    padding: 20px;
+    background-color: var(--background);
+    text-wrap: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #logo {
@@ -83,8 +101,146 @@ body {
 
 #links {
     display: flex;
-    width: 75%;
-    flex-direction: row;
+    gap: 5%;
+}
+
+#links h4 {
+    cursor: pointer;
+}
+
+#links h4:hover,
+#links h4:active {
+    color: var(--tertiary);
+    text-decoration: underline;
+}
+
+main {
+    background-color: var(--background);
+}
+
+#banner {
+    flex: 0;
+    height: 75vh;
+    max-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--header-background-linear-gradient);
+}
+
+#banner h1 {
+    width: 50%;
+    margin-top: 10%;
+    text-align: center;
+    color: var(--primary);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#stats-container {
+    width: 90%;
+    margin: -75% auto;
+    padding: 10%;
+    color: var(--on-container);
+    background-color: var(--container);
+}
+
+#stats-container h2 {
+    color: var(--secondary);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#stat-1,
+#stat-2,
+#stat-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.mehr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 1rem;
+    color: var(--tertiary);
+    cursor: pointer;
+}
+
+.mehr:hover,
+.mehr:active {
+    color: var(--primary);
+}
+
+.mehr-articles {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ueber-uns {
+    padding: 1rem;
+    margin-top: 85%;
+    background: var(--ueber-uns-background-linear-gradient);
+}
+
+#ueber-uns h3 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#helmfakten {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--helmfakten-background-linear-gradient);
+}
+
+#helmfakten-article-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+#helmfakten-article-container h4 {
+    margin-bottom: 5px;
+}
+
+#helmfakten-article-container div {
+    margin-bottom: 1rem;
+}
+
+#ressourcen {
+    background: var(--ressourcen-background-linear-gradient);
+}
+
+.divider {
+    width: 50%;
+    height: 2px;
+    margin-bottom: 1rem;
+    background-color: var(--tertiary);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.gradient-text {
+    background-image: var(--h5-highlight-linear-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.spacer {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    gap: 5%;
+    padding: 1rem;
 }

@@ -11,6 +11,252 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
+    <style>
+        /* Variables */
+        :root {
+            --primary: #FAD030;
+            --secondary: #40FFF5;
+            --tertiary: #9733C9;
+            --background: #F6F6F6;
+            --text: #000;
+            --link: #322BAA;
+            --container: #322BAA;
+            --on-container: #FFF;
+            --header-background-linear-gradient: linear-gradient(180deg, #5882EC 0%, #060457 100%);
+            --ueber-uns-background-linear-gradient: linear-gradient(180deg, #FFF9E1 0%, #F9ECFF 100%);
+            --helmfakten-background-linear-gradient: linear-gradient(180deg, #ECEBFE 0%, #ECFFFE 100%);
+            --ressourcen-background-linear-gradient: linear-gradient(180deg, #FFF7D7 0%, #D5D2FF 100%);
+            --h5-highlight-linear-gradient: linear-gradient(180deg, #FAD030 0%, #9733C9 100%);
+        }
+
+
+        /* Reset */
+        *,
+        *::after,
+        *::before {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            -webkit-appearance: none;
+            appearance: none;
+            -moz-appearance: none;
+            border-radius: 0%;
+            -webkit-border-radius: 0;
+        }
+
+        /* Fonts */
+        h1, h2, h3, h4, h5 {
+            font-family: "League Gothic", sans-serif;
+            letter-spacing: 1.2px;
+            text-align: center;
+            font-weight: 200;
+            color: var(--text);
+        }
+        body, p { 
+            font-size: 16px;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 64px;
+        }
+        h2 { font-size: 40px; }
+        h3 { font-size: 36px; }
+        h4 { font-size: 24px; }
+        h5 { font-size: 20px; }
+        small { font-size: 14px; }
+        a, 
+        a:visited { 
+            color: var(--link);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+
+        html {
+            display: flex;
+            justify-content: center;
+        }
+
+        body {
+            margin-bottom: 5rem;
+        }
+
+        #top-nav {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10%;
+            padding: 20px;
+            background-color: var(--background);
+            text-wrap: nowrap;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo {
+            width: 25%;
+            height: auto;
+        }
+
+        #links {
+            display: flex;
+            gap: 5%;
+        }
+
+        #links h4 {
+            cursor: pointer;
+        }
+
+        #links h4:hover,
+        #links h4:active {
+            color: var(--tertiary);
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: var(--background);
+        }
+
+        #banner {
+            flex: 0;
+            height: 75vh;
+            max-height: 750px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--header-background-linear-gradient);
+        }
+
+        #banner h1 {
+            width: 50%;
+            margin-top: 10%;
+            text-align: center;
+            color: var(--primary);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        #stats-container {
+            width: 90%;
+            margin: -75% auto;
+            padding: 10%;
+            color: var(--on-container);
+            background-color: var(--container);
+        }
+
+        #stats-container h2 {
+            color: var(--secondary);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        #stat-1,
+        #stat-2,
+        #stat-3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mehr {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 1rem;
+            color: var(--tertiary);
+            cursor: pointer;
+        }
+
+        .mehr:hover,
+        .mehr:active {
+            color: var(--primary);
+        }
+
+        .mehr-articles {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #ueber-uns {
+            padding: 1rem;
+            margin-top: 85%;
+            background: var(--ueber-uns-background-linear-gradient);
+        }
+
+        #ueber-uns h3 {
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        #helmfakten {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: var(--helmfakten-background-linear-gradient);
+        }
+
+        #helmfakten-article-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5%;
+        }
+
+        #helmfakten-article-container h4 {
+            margin-bottom: 5px;
+        }
+
+        #helmfakten-article-container div {
+            margin-bottom: 1rem;
+        }
+
+        #ressourcen {
+            background: var(--ressourcen-background-linear-gradient);
+        }
+
+        .divider {
+            width: 50%;
+            height: 2px;
+            margin-bottom: 1rem;
+            background-color: var(--tertiary);
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .gradient-text {
+            background-image: var(--h5-highlight-linear-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .spacer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5%;
+            padding: 1rem;
+        }
+    </style>
     <nav id="top-nav">
         <svg id="logo" width="165" height="109" viewBox="0 0 165 109" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="160" height="103.198" transform="matrix(0.999381 -0.035189 0.0346124 0.999401 0.631592 5.86353)" fill="#1F1F1F"/>
