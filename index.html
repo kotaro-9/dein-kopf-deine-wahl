@@ -12,6 +12,8 @@
 </head>
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
         /* Variables */
         :root {
             --primary: #FAD030;
@@ -90,6 +92,8 @@
         }
 
         body {
+            min-width: 390px;
+            max-width: 420px;
             margin-bottom: 5rem;
         }
 
@@ -99,7 +103,9 @@
             top: 0;
             display: flex;
             align-items: center;
-            gap: 10%;
+            gap: 5%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             padding: 20px;
             background-color: var(--background);
             text-wrap: nowrap;
@@ -134,24 +140,29 @@
             flex: 0;
             height: 75vh;
             max-height: 750px;
+            border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
             background: var(--header-background-linear-gradient);
         }
 
-        #banner h1 {
-            width: 50%;
-            margin-top: 10%;
+        #banner h1 { 
+            width: 210px;
+            margin: 0;
             text-align: center;
             color: var(--primary);
+            text-wrap: nowrap;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
         #stats-container {
             width: 90%;
-            margin: -75% auto;
+            margin: -90% auto;
             padding: 10%;
+            padding-bottom: 0;
+            margin-bottom: 25px;
+            border-radius: 10px;
             color: var(--on-container);
             background-color: var(--container);
         }
@@ -169,12 +180,16 @@
         }
 
         .mehr {
+            width: 25%;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
-            padding: 1rem;
+            margin: -5%;
+            padding:0.5rem;
             color: var(--tertiary);
+            background-color: rgba(255, 255, 255, 0.08);
             cursor: pointer;
         }
 
@@ -188,6 +203,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .mehr > a {
+            color: var(--tertiary);
         }
 
         #ueber-uns {
@@ -241,6 +260,10 @@
             padding-bottom: 2.5rem;
         }
 
+        .center > p {
+            margin-top: -10%;
+        }
+
         .gradient-text {
             background-image: var(--h5-highlight-linear-gradient);
             -webkit-background-clip: text;
@@ -255,6 +278,10 @@
             justify-content: space-between;
             gap: 5%;
             padding: 1rem;
+        }
+
+        #infos {
+            margin-top: -70%;
         }
     </style>
     <nav id="top-nav">
@@ -271,26 +298,27 @@
     </nav>
     <main>
         <div id="banner">
-            <h1>Dein Kopf, Deine Wahl!</h1>
+            <h1>Dein Kopf,</h1>
+            <h1>Deine Wahl!</h1>
         </div>
         <article id="stats-container">
-            <section id="stat-1">
+            <section class="center" id="stat-1">
                 <h2>85%</h2>
                 <p>geringeres Risiko schwerer Kopfverletzungen durch Tragen eines Helms</p>
-                <div class="mehr">mehr<span class="material-symbols-rounded">expand_circle_right</span></div>
+                <div class="mehr"><a href="#fakt-1">mehr</a><span class="material-symbols-rounded">expand_circle_right</span></div>
             </section>
-            <section id="stat-2">
+            <section class="center" id="stat-2">
                 <h2>70%</h2>
                 <p>von jungen Fahrradfahrern tragen keinen Helm</p>
-                <div class="mehr">mehr<span class="material-symbols-rounded">expand_circle_right</span></div>
+                <div class="mehr"><a href="#fakt-2">mehr</a><span class="material-symbols-rounded">expand_circle_right</span></div>
             </section>
-            <section id="stat-3">
+            <section class="center" id="stat-3">
                 <h2>3 von 4</h2>
                 <p>schweren Fahrradunfällen betreffen Jugendliche, die keinen Helm getragen haben</p>
-                <div class="mehr">mehr<span class="material-symbols-rounded">expand_circle_right</span></div>
+                <div class="mehr"><a href="#fakt-3">mehr</a><span class="material-symbols-rounded">expand_circle_right</span></div>
             </section>
         </article>
-        <div class="center">
+        <div id="infos" class="center">
             <article class="mehr-articles" id="ueber-uns">
                 <h3>Über Uns</h3>
                 <div class="divider"></div>
@@ -300,15 +328,15 @@
                 <h3>Helmfakten</h3>
                 <div class="divider"></div>
                 <div id="helmfakten-article-container">
-                    <div>
+                    <div id="fakt-1">
                         <h4><b><span class="gradient-text">85%</span> weniger Kopfverletzungen</b></h4>
                         <p>Das Tragen eines Helms kann das Risiko von schweren Kopfverletzungen um bis zu 85% reduzieren. Helme sind speziell dafür entwickelt, den Aufprall zu absorbieren und den Kopf vor direkten Verletzungen zu schützen. Eine Studie der Rechtsmedizin der Universität München zeigt, dass Helme Leben retten können, indem sie die Wucht eines Aufpralls deutlich mindern.</p>
                     </div>
-                    <div>
+                    <div id="fakt-2">
                         <h4><b><span class="gradient-text">70%</span> der Radfahrer ohne Helm</b></h4>
                         <p>Studien zeigen, dass etwa 70% der jungen Radfahrer keinen Helm tragen. Viele wissen nicht, wie wichtig Helme für die Sicherheit sind. Helme schützen den Kopf vor schweren Verletzungen und können bei einem Unfall den entscheidenden Unterschied machen.</p>
                     </div>
-                    <div>
+                    <div id="fakt-3">
                         <h4><b><span class="gradient-text">3 von 4</span> schweren Unfällen</b></h4>
                         <p>Drei von vier schweren Fahrradunfällen betreffen Jugendliche, die keinen Helm getragen haben. Diese Statistik unterstreicht die Bedeutung des Helmschutzes. Ohne Helm ist das Risiko einer schweren Kopfverletzung bei einem Unfall erheblich höher.</p>
                     </div>
