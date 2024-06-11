@@ -93,7 +93,7 @@
 
         body {
             min-width: 390px;
-            max-width: 420px;
+            max-width: 421px;
             margin-bottom: 5rem;
         }
 
@@ -158,7 +158,7 @@
 
         #stats-container {
             width: 90%;
-            margin: -90% auto;
+            margin: -75% auto;
             padding: 10%;
             padding-bottom: 0;
             margin-bottom: 25px;
@@ -203,10 +203,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-radius: 10px;
         }
 
         .mehr > a {
             color: var(--tertiary);
+        }
+
+        .mehr:hover,
+        .mehr > a:hover,
+        span:hover {
+            color: var(--primary);
         }
 
         #ueber-uns {

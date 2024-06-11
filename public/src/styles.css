@@ -79,6 +79,7 @@ html {
 
 body {
     min-width: 360px;
+    max-width: 421px;
     margin-bottom: 5rem;
 }
 
@@ -140,7 +141,7 @@ main {
 
 #stats-container {
     width: 90%;
-    margin: -75% auto;
+    margin: -80% auto;
     padding: 10%;
     color: var(--on-container);
     background-color: var(--container);
